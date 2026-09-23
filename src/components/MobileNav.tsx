@@ -39,7 +39,7 @@ export function MobileNav({ activeId }: MobileNavProps) {
         aria-expanded={open}
         aria-controls="mobile-menu"
         aria-label={open ? "Chiudi menu" : "Apri menu"}
-        className="fixed top-4 right-4 z-50 flex size-11 items-center justify-center rounded-full bg-void/70 text-accent backdrop-blur-md"
+        className="fixed top-16 right-6 z-50 flex size-13 items-center justify-center rounded-full border border-accent bg-void/70 text-accent backdrop-blur-md"
       >
         {/* Tre linee che diventano una X; l'alone neon avvolge solo loro. */}
         <span
@@ -50,19 +50,19 @@ export function MobileNav({ activeId }: MobileNavProps) {
         >
           <span
             aria-hidden="true"
-            className={`absolute h-0.5 w-5 rounded-full bg-current transition-transform duration-300 ease-[var(--ease-out-soft)] ${
+            className={`absolute h-0.5 w-6 rounded-full bg-current transition-transform duration-300 ease-[var(--ease-out-soft)] ${
               open ? "rotate-45" : "-translate-y-1.5"
             }`}
           />
           <span
             aria-hidden="true"
-            className={`absolute h-0.5 w-5 rounded-full bg-current transition-opacity duration-200 ${
+            className={`absolute h-0.5 w-6 rounded-full bg-current transition-opacity duration-200 ${
               open ? "opacity-0" : "opacity-100"
             }`}
           />
           <span
             aria-hidden="true"
-            className={`absolute h-0.5 w-5 rounded-full bg-current transition-transform duration-300 ease-[var(--ease-out-soft)] ${
+            className={`absolute h-0.5 w-6 rounded-full bg-current transition-transform duration-300 ease-[var(--ease-out-soft)] ${
               open ? "-rotate-45" : "translate-y-1.5"
             }`}
           />
@@ -81,7 +81,7 @@ export function MobileNav({ activeId }: MobileNavProps) {
       <nav
         id="mobile-menu"
         aria-label="Sezioni della pagina"
-        className={`fixed inset-x-0 top-0 z-40 border-b border-hairline bg-surface px-6 pt-16 pb-4 transition-[opacity,transform,visibility] duration-300 ease-[var(--ease-out-soft)] ${
+        className={`fixed inset-x-0 top-0 z-40 border-b border-hairline bg-surface px-6 pt-32 pb-4 transition-[opacity,transform,visibility] duration-300 ease-[var(--ease-out-soft)] ${
           open
             ? "visible translate-y-0 opacity-100"
             : "invisible -translate-y-2 opacity-0"

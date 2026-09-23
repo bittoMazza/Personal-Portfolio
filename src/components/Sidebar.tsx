@@ -1,6 +1,5 @@
-import { profile, sections, socials } from "../data/profile";
+import { profile, sections } from "../data/profile";
 import { Avatar } from "./Avatar";
-import { iconMap } from "./Icons";
 import { MobileNav } from "./MobileNav";
 
 const avatarSrc = "/images/avatar.jpg";
@@ -13,7 +12,7 @@ export function Sidebar({ activeId }: SidebarProps) {
   return (
     <>
       <MobileNav activeId={activeId} />
-      <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[38%] lg:max-w-sm lg:flex-col lg:justify-between lg:py-14">
+      <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[38%] lg:max-w-sm lg:flex-col lg:justify-between lg:py-24 lg:[@media(max-height:900px)]:py-12">
         <div>
           {/* Mobile e desktop: avatar sopra il testo. Tablet: avatar accanto. */}
           <div className="md:flex md:items-center md:gap-10 lg:block">
@@ -29,16 +28,12 @@ export function Sidebar({ activeId }: SidebarProps) {
             </div>
 
             <div>
-              <p className="eyebrow rise-in" style={{ animationDelay: "60ms" }}>
-                Portfolio — {new Date().getFullYear()}
-              </p>
-
-              <h1
+              <h2
                 className="rise-in mt-4 text-[length:var(--text-hero)] font-bold text-ink"
                 style={{ animationDelay: "120ms" }}
               >
                 {profile.name}
-              </h1>
+              </h2>
 
               <p
                 className="rise-in mt-2 font-display text-lg font-semibold text-accent"
@@ -104,31 +99,6 @@ export function Sidebar({ activeId }: SidebarProps) {
             </ul>
           </nav>
         </div>
-
-        {/* Su mobile i contatti restano nella sezione Contatti. */}
-        <ul
-          className="rise-in mt-10 hidden items-center gap-5 md:flex lg:mt-0"
-          style={{ animationDelay: "360ms" }}
-        >
-          {socials.map((social) => {
-            const Icon = iconMap[social.icon];
-            return (
-              <li key={social.label}>
-                <a
-                  href={social.href}
-                  target={social.icon === "mail" ? undefined : "_blank"}
-                  rel={
-                    social.icon === "mail" ? undefined : "noreferrer noopener"
-                  }
-                  className="block rounded-sm p-1 text-muted transition-all duration-300 hover:-translate-y-0.5 hover:text-accent hover:drop-shadow-[0_0_10px_rgb(79_209_197_/_0.45)]"
-                >
-                  <Icon />
-                  <span className="sr-only">{social.label}</span>
-                </a>
-              </li>
-            );
-          })}
-        </ul>
       </header>
     </>
   );
