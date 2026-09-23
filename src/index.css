@@ -1,0 +1,187 @@
+@import 'tailwindcss';
+
+/* ---------------------------------------------------------------------------
+   Design tokens — un'unica fonte di verità per colore, type e ritmo.
+   Il sito è volutamente monotema (dark): l'accento teal è l'unico colore
+   saturo, tutto il resto è una scala di verdi desaturati.
+   --------------------------------------------------------------------------- */
+@theme {
+  --color-void: #07110f; /* fondo pagina */
+  --color-surface: #0e1a18; /* card, pannelli */
+  --color-surface-hi: #132321; /* hover delle card */
+  --color-hairline: #1c2b28; /* bordi, tacche del rail */
+  --color-muted: #8ba39d; /* testo secondario */
+  --color-ink: #dceae6; /* testo primario */
+  --color-accent: #4fd1c5; /* accento unico */
+  --color-accent-soft: #2d6b66; /* accento su fondo, stati quieti */
+
+  --font-display: 'Sora', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Inter Tight', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+
+  --text-hero: clamp(2.5rem, 6vw, 3.75rem);
+  --text-section: clamp(1.5rem, 3.5vw, 2rem);
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: var(--color-void);
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Trama d'atmosfera: un unico alone teal ancorato in alto a sinistra,
+     dietro la sidebar, così la pagina non è nero piatto. */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+      radial-gradient(60rem 40rem at 8% -10%, rgb(79 209 197 / 0.07), transparent 60%),
+      radial-gradient(40rem 30rem at 100% 100%, rgb(79 209 197 / 0.035), transparent 65%);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: var(--color-ink);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-void);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@layer components {
+  /* Etichetta mono usata per numeri di sezione, date, tag tecnici. */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  /* Tag dello stack tecnologico. */
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.04em;
+    color: var(--color-accent);
+    background: rgb(79 209 197 / 0.08);
+    border: 1px solid rgb(79 209 197 / 0.18);
+    border-radius: 999px;
+    padding: 0.2rem 0.6rem;
+    white-space: nowrap;
+  }
+
+  /* Glow leggero condiviso da card e pulsanti al passaggio del mouse. */
+  .glow-hover {
+    transition:
+      border-color 0.35s var(--ease-out-soft),
+      background-color 0.35s var(--ease-out-soft),
+      box-shadow 0.35s var(--ease-out-soft),
+      transform 0.35s var(--ease-out-soft);
+  }
+
+  .glow-hover:hover,
+  .glow-hover:focus-visible {
+    border-color: rgb(79 209 197 / 0.35);
+    box-shadow: 0 0 0 1px rgb(79 209 197 / 0.12), 0 14px 40px -22px rgb(79 209 197 / 0.5);
+  }
+
+  .link-accent {
+    color: var(--color-ink);
+    text-decoration: none;
+    box-shadow: inset 0 -1px 0 0 var(--color-accent-soft);
+    transition: color 0.25s var(--ease-out-soft), box-shadow 0.25s var(--ease-out-soft);
+  }
+
+  .link-accent:hover,
+  .link-accent:focus-visible {
+    color: var(--color-accent);
+    box-shadow: inset 0 -1px 0 0 var(--color-accent);
+  }
+}
+
+@layer utilities {
+  /* Reveal allo scroll — attivato aggiungendo .is-visible via IntersectionObserver. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 0.7s var(--ease-out-soft),
+      transform 0.7s var(--ease-out-soft);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Sequenza di entrata della sidebar al caricamento. */
+  @keyframes rise-in {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .rise-in {
+    animation: rise-in 0.8s var(--ease-out-soft) both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
