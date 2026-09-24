@@ -39,7 +39,7 @@ export function MobileNav({ activeId }: MobileNavProps) {
         aria-expanded={open}
         aria-controls="mobile-menu"
         aria-label={open ? "Chiudi menu" : "Apri menu"}
-        className="fixed top-10 right-6 z-50 flex size-10 items-center justify-center rounded-full border border-accent bg-void/70 text-accent backdrop-blur-md"
+        className="fixed top-10 right-6 z-50 flex size-12 items-center justify-center rounded-full border border-accent bg-void/70 text-accent backdrop-blur-md"
       >
         {/* Tre linee che diventano una X; l'alone neon avvolge solo loro. */}
         <span

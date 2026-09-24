@@ -22,17 +22,11 @@ export function About() {
         Oggi lavoro su{' '}
         <strong className="font-semibold text-ink">progetti enterprise</strong>, dove il codice è
         solo una parte del lavoro: metodologia Agile, integrazione di CRM con l’app mobile e
-        gestione del ciclo di rilascio — pull request, pipeline e build su AWS.
-      </p>
-
-      <p>
-        Mi interessa il punto in cui l’architettura incontra l’uso reale: un’app di domotica deve
-        rispondere subito quando premi un pulsante, anche quando dietro c’è un dispositivo fisico,
-        una rete lenta e tre anni di legacy.
+        gestione delle pull request.
       </p>
 
       <div className="pt-3">
-        <p className="eyebrow">Con cui lavoro ogni giorno</p>
+        <p className="eyebrow">Tecnologie che utilizzo</p>
         <ul className="mt-3 flex flex-wrap gap-2">
           {stack.map((item) => (
             <li key={item} className="tag">

@@ -49,7 +49,8 @@ export const socials: SocialLink[] = [
 export const sections = [
   { id: "about", label: "About", title: "Chi sono" },
   { id: "experience", label: "Experience", title: "Esperienza" },
-  { id: "projects", label: "Projects", title: "Progetti" },
+  // Nascosta per ora: per riattivarla togli il commento.
+  // { id: "projects", label: "Projects", title: "Progetti" },
   { id: "contact", label: "Contact", title: "Contatti" },
 ] as const;
 

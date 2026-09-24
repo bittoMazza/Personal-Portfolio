@@ -1,7 +1,6 @@
 import { About } from "./components/About";
 import { Contact } from "./components/Contact";
 import { Experience } from "./components/Experience";
-import { Projects } from "./components/Projects";
 import { Section } from "./components/Section";
 import { Sidebar } from "./components/Sidebar";
 import { sections } from "./data/profile";
@@ -13,7 +12,6 @@ const sectionIds = sections.map((section) => section.id);
 const content = {
   about: <About />,
   experience: <Experience />,
-  projects: <Projects />,
   contact: <Contact />,
 } as const;
 

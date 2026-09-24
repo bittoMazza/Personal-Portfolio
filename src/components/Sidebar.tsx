@@ -41,13 +41,6 @@ export function Sidebar({ activeId }: SidebarProps) {
               >
                 {profile.role}
               </p>
-
-              <p
-                className="rise-in mt-5 max-w-sm text-pretty"
-                style={{ animationDelay: "240ms" }}
-              >
-                {profile.tagline}
-              </p>
             </div>
           </div>
 

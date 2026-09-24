@@ -16,25 +16,6 @@ export type Experience = {
 
 export const experiences: Experience[] = [
   {
-    id: 'enhancers',
-    company: 'Enhancers — Tinexta Group',
-    role: 'Mobile Developer',
-    period: 'Ott 2024 — Presente',
-    from: '2024-10',
-    to: null,
-    summary: named(
-      'Progetto enterprise di domotica domestica per un cliente del settore elettrodomestici: app mobile che controlla i dispositivi di casa e ne raccoglie i dati.',
-      'Progetto Haier (h0n): app mobile di domotica domestica che controlla i dispositivi di casa e ne raccoglie i dati.',
-    ),
-    highlights: [
-      'Sviluppo React Native su architetture complesse, con attenzione a performance e gestione dello stato.',
-      'Integrazione di un CRM collegato all’app mobile per anagrafiche e assistenza.',
-      'Metodologia Agile con pianificazione e tracciamento delle attività su Jira.',
-      'Gestione del ciclo di pull request attraverso pipeline di build e rilascio su AWS.',
-    ],
-    stack: ['React Native', 'TypeScript', 'Jira', 'AWS', 'CI/CD', 'CRM'],
-  },
-  {
     id: 'netrising',
     company: 'Netrising',
     role: 'Web & Mobile Developer',
@@ -54,5 +35,23 @@ export const experiences: Experience[] = [
       ),
     ],
     stack: ['WordPress', 'PHP', 'JavaScript', 'React Native', 'Cordova', 'SCSS'],
+  },
+  {
+    id: 'enhancers',
+    company: 'Enhancers — Tinexta Group',
+    role: 'Mobile Developer',
+    period: 'Ott 2024 — Presente',
+    from: '2024-10',
+    to: null,
+    summary: named(
+      'Progetto enterprise di domotica domestica per un cliente del settore elettrodomestici: app mobile che controlla i dispositivi di casa e ne raccoglie i dati.',
+      'Progetto Haier (h0n): app mobile di domotica domestica che controlla i dispositivi di casa e ne raccoglie i dati.',
+    ),
+    highlights: [
+      'Sviluppo React Native su architetture complesse, con attenzione a performance e gestione dello stato.',
+      'Integrazione di un CRM collegato all’app mobile per anagrafiche e assistenza.',
+      'Metodologia Agile con pianificazione e tracciamento delle attività su Jira.',
+    ],
+    stack: ['React Native', 'TypeScript', 'Jira', 'AWS', 'CI/CD', 'CRM'],
   },
 ]
