@@ -22,7 +22,7 @@ export default function App() {
   useReveal();
 
   return (
-    <div className="relative z-10 mx-auto max-w-6xl px-6 py-16 md:px-10 lg:flex lg:justify-between lg:gap-16 lg:px-12 lg:py-0">
+    <div className="relative z-10 mx-auto max-w-6xl px-6 pt-10 pb-12 md:px-10 md:py-16 lg:flex lg:justify-between lg:gap-16 lg:px-12 lg:py-0">
       <a
         href="#about"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:border focus:border-accent focus:bg-void focus:px-4 focus:py-2 focus:font-mono focus:text-xs focus:text-accent"
@@ -32,7 +32,7 @@ export default function App() {
 
       <Sidebar activeId={activeId} />
 
-      <main className="relative mt-16 lg:mt-0 lg:w-[56%] lg:py-24">
+      <main className="relative mt-10 md:mt-16 lg:mt-0 lg:w-[56%] lg:py-24">
         {/* Il rail: la linea verticale a cui si appendono le tacche di sezione. */}
         <span
           aria-hidden="true"

@@ -1,6 +1,8 @@
 export type SocialLink = {
   label: string;
   href: string;
+  /** Come appare il contatto: username o indirizzo. */
+  handle: string;
   icon: "github" | "linkedin" | "mail";
 };
 
@@ -20,19 +22,22 @@ export const profile = {
 
 export const socials: SocialLink[] = [
   {
-    label: "GitHub",
-    href: "https://github.com/bittoMazza",
-    icon: "github",
+    label: "Email",
+    href: `mailto:${profile.email}`,
+    handle: profile.email,
+    icon: "mail",
   },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/roberto-mazza-99-bitto/",
+    handle: "roberto-mazza-99-bitto",
     icon: "linkedin",
   },
   {
-    label: "Email",
-    href: `mailto:${profile.email}`,
-    icon: "mail",
+    label: "GitHub",
+    href: "https://github.com/bittoMazza",
+    handle: "bittoMazza",
+    icon: "github",
   },
 ];
 

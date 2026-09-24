@@ -20,7 +20,7 @@ export function Section({ id, index, label, title, isActive, children }: Section
     <section
       id={id}
       aria-labelledby={`${id}-title`}
-      className="scroll-mt-16 py-14 [&:first-of-type]:pt-0 md:pl-12 lg:py-20"
+      className="scroll-mt-16 py-10 [&:first-of-type]:pt-0 md:py-14 md:pl-12 lg:py-20"
     >
       <header className="reveal relative">
         {/* Tacca sul rail. */}
@@ -54,7 +54,7 @@ export function Section({ id, index, label, title, isActive, children }: Section
         </h2>
       </header>
 
-      <div className="mt-8">{children}</div>
+      <div className="mt-6 md:mt-8">{children}</div>
     </section>
   )
 }
