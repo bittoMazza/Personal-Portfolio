@@ -12,7 +12,7 @@ function ProjectShot({ image }: { image: ProjectImage }) {
           // Segnaposto visibile: mostra il percorso del file da aggiungere,
           // così sostituire le immagini non richiede di aprire il codice.
           <div className="flex h-full flex-col items-center justify-center gap-1 p-4 text-center">
-            <span className="eyebrow text-accent-soft">Immagine da aggiungere</span>
+            <span className="eyebrow text-accent-soft">Image to add</span>
             <code className="font-mono text-[0.68rem] break-all text-muted">{image.src}</code>
           </div>
         ) : (
@@ -60,7 +60,7 @@ export function ProjectCase({ project, defaultOpen = false }: { project: Project
           </span>
 
           <span className="mt-1 flex shrink-0 items-center gap-2 font-mono text-[0.7rem] text-muted">
-            <span className="hidden sm:inline">{open ? 'Chiudi' : 'Case study'}</span>
+            <span className="hidden sm:inline">{open ? 'Close' : 'Case study'}</span>
             <ChevronIcon
               className={`h-4 w-4 transition-transform duration-400 ease-[var(--ease-out-soft)] ${
                 open ? 'rotate-180 text-accent' : ''
@@ -74,17 +74,17 @@ export function ProjectCase({ project, defaultOpen = false }: { project: Project
         <div id={panelId} className="border-t border-hairline p-5">
           <div className="grid gap-6 sm:grid-cols-2">
             <div>
-              <p className="eyebrow">Contesto</p>
+              <p className="eyebrow">Context</p>
               <p className="mt-2 text-sm text-pretty">{project.context}</p>
             </div>
             <div>
-              <p className="eyebrow">Il mio ruolo</p>
+              <p className="eyebrow">My role</p>
               <p className="mt-2 text-sm text-pretty">{project.role}</p>
             </div>
           </div>
 
           <div className="mt-6">
-            <p className="eyebrow">Responsabilità</p>
+            <p className="eyebrow">Responsibilities</p>
             <ul className="mt-2 space-y-1.5 text-sm">
               {project.responsibilities.map((item) => (
                 <li key={item} className="relative pl-5">
@@ -109,13 +109,15 @@ export function ProjectCase({ project, defaultOpen = false }: { project: Project
             </ul>
           </div>
 
-          <div
-            className={`mt-6 grid gap-4 ${project.images.length > 1 ? 'sm:grid-cols-2' : ''}`}
-          >
-            {project.images.map((image) => (
-              <ProjectShot key={image.src} image={image} />
-            ))}
-          </div>
+          {project.images.length > 0 && (
+            <div
+              className={`mt-6 grid gap-4 ${project.images.length > 1 ? 'sm:grid-cols-2' : ''}`}
+            >
+              {project.images.map((image) => (
+                <ProjectShot key={image.src} image={image} />
+              ))}
+            </div>
+          )}
         </div>
       )}
     </article>

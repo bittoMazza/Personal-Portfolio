@@ -12,10 +12,10 @@ export const profile = {
   role: "Mobile & Web Developer",
   /** Una riga sul valore che porti: è la prima cosa che si legge. */
   tagline:
-    "Costruisco app React Native e interfacce web per progetti enterprise, dal primo commit alla pipeline di rilascio.",
+    "I build React Native apps and web interfaces for enterprise projects.",
   /** ### PLACEHOLDER: indirizzo email pubblico ### */
   email: "robertomazza99@gmail.com",
-  location: "Italia",
+  location: "Italy",
   /** ### PLACEHOLDER: path della foto profilo (es. file in public/images) ### */
   avatar: "/images/avatar.jpg",
 } as const;
@@ -47,11 +47,11 @@ export const socials: SocialLink[] = [
  * non è decorazione. L'ordine qui guida sidebar, rail e ancore.
  */
 export const sections = [
-  { id: "about", label: "About", title: "Chi sono" },
-  { id: "experience", label: "Experience", title: "Esperienza" },
-  // Nascosta per ora: per riattivarla togli il commento.
-  // { id: "projects", label: "Projects", title: "Progetti" },
-  { id: "contact", label: "Contact", title: "Contatti" },
+  { id: "about", label: "About", title: "About me" },
+  { id: "experience", label: "Experience", title: "Experience" },
+
+  { id: "projects", label: "Projects", title: "Projects" },
+  { id: "contact", label: "Contact", title: "Get in touch" },
 ] as const;
 
 export type SectionId = (typeof sections)[number]["id"];

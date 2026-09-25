@@ -48,7 +48,7 @@ export function Sidebar({ activeId }: SidebarProps) {
           <nav
             className="rise-in mt-10 hidden md:block lg:mt-6"
             style={{ animationDelay: "300ms" }}
-            aria-label="Sezioni della pagina"
+            aria-label="Page sections"
           >
             <ul className="-mx-10 flex gap-6 overflow-x-auto px-10 pb-2 lg:mx-0 lg:flex-col lg:gap-3 lg:overflow-visible lg:px-0 lg:pb-0">
               {sections.map((section, index) => {

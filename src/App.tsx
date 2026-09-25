@@ -1,6 +1,7 @@
 import { About } from "./components/About";
 import { Contact } from "./components/Contact";
 import { Experience } from "./components/Experience";
+import { Projects } from "./components/Projects";
 import { Section } from "./components/Section";
 import { Sidebar } from "./components/Sidebar";
 import { sections } from "./data/profile";
@@ -12,6 +13,7 @@ const sectionIds = sections.map((section) => section.id);
 const content = {
   about: <About />,
   experience: <Experience />,
+  projects: <Projects />,
   contact: <Contact />,
 } as const;
 
@@ -25,7 +27,7 @@ export default function App() {
         href="#about"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:border focus:border-accent focus:bg-void focus:px-4 focus:py-2 focus:font-mono focus:text-xs focus:text-accent"
       >
-        Salta al contenuto
+        Skip to content
       </a>
 
       <Sidebar activeId={activeId} />

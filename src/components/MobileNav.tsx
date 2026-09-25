@@ -38,7 +38,7 @@ export function MobileNav({ activeId }: MobileNavProps) {
         onClick={() => setOpen((value) => !value)}
         aria-expanded={open}
         aria-controls="mobile-menu"
-        aria-label={open ? "Chiudi menu" : "Apri menu"}
+        aria-label={open ? "Close menu" : "Open menu"}
         className="fixed top-10 right-6 z-50 flex size-12 items-center justify-center rounded-full border border-accent bg-void/70 text-accent backdrop-blur-md"
       >
         {/* Tre linee che diventano una X; l'alone neon avvolge solo loro. */}
@@ -80,7 +80,7 @@ export function MobileNav({ activeId }: MobileNavProps) {
 
       <nav
         id="mobile-menu"
-        aria-label="Sezioni della pagina"
+        aria-label="Page sections"
         className={`fixed inset-x-0 top-0 z-40 border-b border-hairline bg-surface px-6 pt-24 pb-4 transition-[opacity,transform,visibility] duration-300 ease-[var(--ease-out-soft)] ${
           open
             ? "visible translate-y-0 opacity-100"

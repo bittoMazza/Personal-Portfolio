@@ -6,13 +6,13 @@
    saturo, tutto il resto è una scala di verdi desaturati.
    --------------------------------------------------------------------------- */
 @theme {
-  --color-void: #07110f; /* fondo pagina */
-  --color-surface: #0e1a18; /* card, pannelli */
-  --color-surface-hi: #132321; /* hover delle card */
-  --color-hairline: #1c2b28; /* bordi, tacche del rail */
-  --color-muted: #8ba39d; /* testo secondario */
-  --color-ink: #dceae6; /* testo primario */
-  --color-accent: #4fd1c5; /* accento unico */
+  --color-void: #16201e; /* fondo pagina */
+  --color-surface: #1e2a28; /* card, pannelli */
+  --color-surface-hi: #253331; /* hover delle card */
+  --color-hairline: #30403d; /* bordi, tacche del rail */
+  --color-muted: #a3b8b3; /* testo secondario */
+  --color-ink: #eef5f3; /* testo primario */
+  --color-accent: #5eead4; /* accento unico */
   --color-accent-soft: #2d6b66; /* accento su fondo, stati quieti */
 
   --font-display: 'Sora', ui-sans-serif, system-ui, sans-serif;
@@ -49,8 +49,8 @@
     pointer-events: none;
     z-index: 0;
     background:
-      radial-gradient(60rem 40rem at 8% -10%, rgb(79 209 197 / 0.07), transparent 60%),
-      radial-gradient(40rem 30rem at 100% 100%, rgb(79 209 197 / 0.035), transparent 65%);
+      radial-gradient(60rem 40rem at 8% -10%, rgb(94 234 212 / 0.07), transparent 60%),
+      radial-gradient(40rem 30rem at 100% 100%, rgb(94 234 212 / 0.035), transparent 65%);
   }
 
   h1,
@@ -99,8 +99,8 @@
     font-size: 0.6875rem;
     letter-spacing: 0.04em;
     color: var(--color-accent);
-    background: rgb(79 209 197 / 0.08);
-    border: 1px solid rgb(79 209 197 / 0.18);
+    background: rgb(94 234 212 / 0.08);
+    border: 1px solid rgb(94 234 212 / 0.18);
     border-radius: 999px;
     padding: 0.2rem 0.6rem;
     white-space: nowrap;
@@ -117,8 +117,8 @@
 
   .glow-hover:hover,
   .glow-hover:focus-visible {
-    border-color: rgb(79 209 197 / 0.35);
-    box-shadow: 0 0 0 1px rgb(79 209 197 / 0.12), 0 14px 40px -22px rgb(79 209 197 / 0.5);
+    border-color: rgb(94 234 212 / 0.35);
+    box-shadow: 0 0 0 1px rgb(94 234 212 / 0.12), 0 14px 40px -22px rgb(94 234 212 / 0.5);
   }
 
   .link-accent {
@@ -171,10 +171,10 @@
   @keyframes neon-pulse {
     0%,
     100% {
-      filter: drop-shadow(0 0 2px rgb(79 209 197 / 0.6)) drop-shadow(0 0 6px rgb(79 209 197 / 0.25));
+      filter: drop-shadow(0 0 2px rgb(94 234 212 / 0.6)) drop-shadow(0 0 6px rgb(94 234 212 / 0.25));
     }
     50% {
-      filter: drop-shadow(0 0 3px rgb(79 209 197 / 0.9)) drop-shadow(0 0 12px rgb(79 209 197 / 0.55));
+      filter: drop-shadow(0 0 3px rgb(94 234 212 / 0.9)) drop-shadow(0 0 12px rgb(94 234 212 / 0.55));
     }
   }
 
@@ -187,7 +187,7 @@
     57%,
     100% {
       opacity: 1;
-      filter: drop-shadow(0 0 3px rgb(79 209 197 / 0.95)) drop-shadow(0 0 14px rgb(79 209 197 / 0.6));
+      filter: drop-shadow(0 0 3px rgb(94 234 212 / 0.95)) drop-shadow(0 0 14px rgb(94 234 212 / 0.6));
     }
     20%,
     24%,

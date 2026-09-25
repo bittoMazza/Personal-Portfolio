@@ -6,8 +6,8 @@ export function Contact() {
   return (
     <div className="reveal max-w-xl">
       <p className="text-pretty">
-        Cerchi qualcuno per un’app React Native o per un sito da rifare come si deve? Scrivimi:
-        rispondo di solito entro un giorno lavorativo.
+        Looking for someone to build a React Native app or to rebuild a website the right way?
+        Get in touch: I usually reply within one business day.
       </p>
 
       <ul className="mt-8 space-y-3">
